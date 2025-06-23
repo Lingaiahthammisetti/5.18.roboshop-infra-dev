@@ -1,4 +1,4 @@
-resource "aws_cloudfront_distribution" "daws76s" {
+resource "aws_cloudfront_distribution" "daws78s" {
   enabled             = true
   aliases             = ["web-${var.tags.Component}.${var.zone_name}"]
   origin {
@@ -69,8 +69,8 @@ module "records" {
       name    = "web-cdn"
       type    = "A"
       alias   = {
-        name    = aws_cloudfront_distribution.daws76s.domain_name
-        zone_id = aws_cloudfront_distribution.daws76s.hosted_zone_id
+        name    = aws_cloudfront_distribution.daws78s.domain_name
+        zone_id = aws_cloudfront_distribution.daws78s.hosted_zone_id
       }
     }
   ]

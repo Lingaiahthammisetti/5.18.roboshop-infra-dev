@@ -1,5 +1,5 @@
 module "shipping" {
-  source = "git::https://github.com/Lingaiahthammisetti/5.20.terraform-roboshop-app.git?ref=main"
+  source = "git::https://github.com/Lingaiahthammisetti/5.17.terraform-roboshop-app.git?ref=main"
   #source ="../../5.20.terraform-roboshop-app"
   vpc_id = data.aws_ssm_parameter.vpc_id.value
   component_sg_id = data.aws_ssm_parameter.shipping_sg_id.value
