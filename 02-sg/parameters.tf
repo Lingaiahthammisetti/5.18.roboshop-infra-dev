@@ -3,6 +3,11 @@ resource "aws_ssm_parameter" "vpn_sg_id" {
   type  = "String"
   value = module.vpn.sg_id
 }
+# resource "aws_ssm_parameter" "bastion_sg_id" {
+#   name  = "/${var.project_name}/${var.environment}/bastion_sg_id"
+#   type  = "String"
+#   value = module.bastion.sg_id
+# }
 
 resource "aws_ssm_parameter" "mongodb_sg_id" {
   name  = "/${var.project_name}/${var.environment}/mongodb_sg_id"
@@ -56,6 +61,12 @@ resource "aws_ssm_parameter" "payment_sg_id" {
   name  = "/${var.project_name}/${var.environment}/payment_sg_id"
   type  = "String"
   value = module.payment.sg_id
+}
+
+resource "aws_ssm_parameter" "dispatch_sg_id" {
+  name  = "/${var.project_name}/${var.environment}/dispatch_sg_id"
+  type  = "String"
+  value = module.dispatch.sg_id
 }
 
 resource "aws_ssm_parameter" "web_sg_id" {
