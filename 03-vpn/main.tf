@@ -25,5 +25,6 @@ module "vpn" {
         }
 
     )
+    depends_on = [aws_key_pair.vpn]
   
 }

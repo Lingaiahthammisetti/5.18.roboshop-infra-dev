@@ -68,6 +68,7 @@ resource "aws_ec2_instance_state" "web" {
 resource "aws_ami_from_instance" "web" {
   name               = "${local.name}-${var.tags.Component}-${local.current_time}"
   source_instance_id = module.web.id
+  snapshot_without_reboot = false
   depends_on = [ aws_ec2_instance_state.web ]
 }
 

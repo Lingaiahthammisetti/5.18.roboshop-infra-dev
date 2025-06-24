@@ -1,14 +1,8 @@
 resource "aws_ssm_parameter" "vpn_sg_id" {
-  name  = "/${var.project_name}/${var.environment}/vpn_sg_id"
+  name  = "/${var.project_name}/${var.environment}/vpn_sg_id"  #This SG will store its SG id in SSM Parameter store.
   type  = "String"
-  value = module.vpn.sg_id
+  value =  module.vpn.sg_id
 }
-# resource "aws_ssm_parameter" "bastion_sg_id" {
-#   name  = "/${var.project_name}/${var.environment}/bastion_sg_id"
-#   type  = "String"
-#   value = module.bastion.sg_id
-# }
-
 resource "aws_ssm_parameter" "mongodb_sg_id" {
   name  = "/${var.project_name}/${var.environment}/mongodb_sg_id"
   type  = "String"
@@ -63,26 +57,24 @@ resource "aws_ssm_parameter" "payment_sg_id" {
   value = module.payment.sg_id
 }
 
+resource "aws_ssm_parameter" "web_sg_id" {
+  name  = "/${var.project_name}/${var.environment}/web_sg_id"
+  type  = "String"
+  value = module.web.sg_id
+}
 resource "aws_ssm_parameter" "dispatch_sg_id" {
   name  = "/${var.project_name}/${var.environment}/dispatch_sg_id"
   type  = "String"
   value = module.dispatch.sg_id
 }
 
-resource "aws_ssm_parameter" "web_sg_id" {
-  name  = "/${var.project_name}/${var.environment}/web_sg_id"
-  type  = "String"
-  value = module.web.sg_id
-}
-
 resource "aws_ssm_parameter" "app_alb_sg_id" {
-  name  = "/${var.project_name}/${var.environment}/app_alb_sg_id"
+  name  = "/${var.project_name}/${var.environment}/app_alb_sg_id"  #This SG will store its SG id in SSM Parameter store.
   type  = "String"
-  value = module.app_alb.sg_id
+  value =  module.app_alb.sg_id
 }
-
 resource "aws_ssm_parameter" "web_alb_sg_id" {
-  name  = "/${var.project_name}/${var.environment}/web_alb_sg_id"
+  name  = "/${var.project_name}/${var.environment}/web_alb_sg_id"  #This SG will store its SG id in SSM Parameter store.
   type  = "String"
-  value = module.web_alb.sg_id
+  value =  module.web_alb.sg_id
 }
