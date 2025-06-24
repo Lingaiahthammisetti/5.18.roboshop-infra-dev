@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "-rroboshop-infra-devemote-state"
+    bucket = "roboshop-infra-dev-remote-state"
     key    = "roboshop-infra-dev-sg"
     region = "us-east-1"
     dynamodb_table = "roboshop-infra-dev-locking"
